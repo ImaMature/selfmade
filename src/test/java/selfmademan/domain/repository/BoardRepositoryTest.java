@@ -54,4 +54,17 @@ class BoardRepositoryTest {
         boardService.getBoardByNo(b_no);
 
     }
+
+    @Test
+    @DisplayName("게시판 수정")
+    public void updateBoard(){
+        boardService.updateBoard(1);
+    }
+
+    @Test
+    @DisplayName("게시판 삭제")
+    public void deleteBoard(){
+        this.createManyBoard();
+        boardService.getdeleteBoard(1);
+    }
 }

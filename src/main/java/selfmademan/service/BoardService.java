@@ -36,4 +36,22 @@ public class BoardService {
         Optional<Board> list = boardRepository.findById(b_no);
         System.out.println(list.toString());
     }
+
+    public void updateBoard(int b_no) {
+        Optional<Board> entity = boardRepository.findById(b_no);
+        try {
+            entity.get().setB_title("ddd");
+            entity.get().setB_contents("ddd");
+            entity.get().setB_writer("aa");
+            System.out.println(entity.toString());
+        }catch(Exception e){
+
+        }
+    }
+
+    public Optional<Board> getdeleteBoard(int b_no) {
+        Optional <Board> entity = boardRepository.findById(b_no);
+        boardRepository.delete(entity.get());
+        return entity;
+    }
 }
